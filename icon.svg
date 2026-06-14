@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+    <linearGradient id="trail" x1="1" y1="0.5" x2="0" y2="0.5">
+      <stop offset="0%" stop-color="#64ffda" stop-opacity="0.9"/>
+      <stop offset="50%" stop-color="#64ffda" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#64ffda" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#64ffda" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="512" height="512" rx="64" fill="url(#bg)"/>
+
+  <!-- Comet trail segments -->
+  <rect x="90" y="236" width="28" height="40" rx="2" fill="#64ffda" opacity="0.08"/>
+  <rect x="124" y="236" width="32" height="40" rx="2" fill="#64ffda" opacity="0.12"/>
+  <rect x="162" y="236" width="36" height="40" rx="2" fill="#64ffda" opacity="0.18"/>
+  <rect x="204" y="236" width="40" height="40" rx="2" fill="#64ffda" opacity="0.28"/>
+  <rect x="250" y="236" width="44" height="40" rx="2" fill="#64ffda" opacity="0.45"/>
+
+  <!-- Connected trail -->
+  <rect x="86" y="240" width="212" height="32" rx="6" fill="url(#trail)" opacity="0.55"/>
+
+  <!-- Main cursor (vertical line) -->
+  <rect x="300" y="206" width="8" height="100" rx="3" fill="#64ffda" filter="url(#shadow)">
+    <animate attributeName="opacity" values="1;0.25;1" dur="1.2s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- Cursor highlight center -->
+  <rect x="302" y="210" width="4" height="92" rx="2" fill="#b0ffec" opacity="0.7"/>
+</svg>

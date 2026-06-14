@@ -1,0 +1,100 @@
+{
+  "name": "cursor-comet",
+  "displayName": "Cursor Comet",
+  "description": "Animated cursor with smooth vertical-line movement and comet tail effect. Works in editor, terminal, search bars, and all input fields.",
+  "version": "0.0.2",
+  "license": "MIT",
+  "publisher": "kibidango086",
+  "icon": "icon.png",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "cursor",
+    "animation",
+    "comet",
+    "trail",
+    "comet cursor",
+    "cursor effect"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "cursor-comet.enable",
+        "title": "Cursor Comet: Enable"
+      },
+      {
+        "command": "cursor-comet.disable",
+        "title": "Cursor Comet: Disable"
+      },
+      {
+        "command": "cursor-comet.reinstall",
+        "title": "Cursor Comet: Reinstall"
+      },
+      {
+        "command": "cursor-comet.repair",
+        "title": "Cursor Comet: Repair Installation"
+      },
+      {
+        "command": "cursor-comet.toggle",
+        "title": "Cursor Comet: Toggle"
+      }
+    ],
+    "configuration": {
+      "title": "Cursor Comet",
+      "properties": {
+        "cursorComet.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable Cursor Comet on startup"
+        },
+        "cursorComet.tailMaxWidth": {
+          "type": "number",
+          "default": 120,
+          "minimum": 20,
+          "maximum": 500,
+          "description": "Comet tail maximum length (px). Longer = more trail."
+        },
+        "cursorComet.throttleMs": {
+          "type": "number",
+          "default": 28,
+          "minimum": 8,
+          "maximum": 200,
+          "description": "Tail spawn interval (ms). Lower = denser trail."
+        },
+        "cursorComet.customColor": {
+          "type": "string",
+          "default": "",
+          "description": "Force a custom color (hex). Leave empty to use theme cursor color."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "package": "vsce package --allow-missing-repository",
+    "publish": "vsce publish"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/vscode": "^1.85.0",
+    "typescript": "^5.3.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Kibidango086/Cursor-Comet.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Kibidango086/Cursor-Comet/issues"
+  },
+  "homepage": "https://github.com/Kibidango086/Cursor-Comet"
+}
